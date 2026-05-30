@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" fill="none">
+  <rect width="400" height="220" fill="#0d1220"/>
+  <!-- Car body -->
+  <rect x="60" y="110" width="280" height="65" rx="12" fill="#1e2a3a"/>
+  <!-- Roof -->
+  <path d="M130 110 L160 65 L240 65 L270 110 Z" fill="#1e2a3a"/>
+  <!-- Windows -->
+  <path d="M145 107 L165 78 L195 78 L195 107 Z" fill="#0a1628" opacity="0.8"/>
+  <path d="M205 107 L205 78 L235 78 L255 107 Z" fill="#0a1628" opacity="0.8"/>
+  <!-- Wheels -->
+  <circle cx="125" cy="175" r="25" fill="#141e2e" stroke="#3b82f6" stroke-width="3"/>
+  <circle cx="125" cy="175" r="12" fill="#1e2a3a" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="275" cy="175" r="25" fill="#141e2e" stroke="#3b82f6" stroke-width="3"/>
+  <circle cx="275" cy="175" r="12" fill="#1e2a3a" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Headlights -->
+  <rect x="65" y="120" width="28" height="14" rx="4" fill="#3b82f6" opacity="0.8"/>
+  <rect x="65" y="120" width="28" height="14" rx="4" fill="url(#glow)" opacity="0.5"/>
+  <!-- Taillights -->
+  <rect x="307" y="120" width="22" height="14" rx="4" fill="#ef4444" opacity="0.8"/>
+  <!-- DriveFlow icon -->
+  <text x="200" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#3b82f6" opacity="0.4">⚡ DriveFlow</text>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

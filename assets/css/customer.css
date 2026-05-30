@@ -1,0 +1,264 @@
+/* ============================================================
+   DriveFlow – Customer Stylesheet
+   assets/css/customer.css
+   ============================================================ */
+
+/* ── Customer Navbar ── */
+.cust-navbar {
+  background: rgba(8,11,20,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--dark-border);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.cust-nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0; padding: 0;
+}
+.cust-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.cust-nav-links a:hover, .cust-nav-links a.active {
+  background: rgba(59,130,246,0.12);
+  color: var(--accent-blue);
+}
+
+.cust-nav-actions { display: flex; align-items: center; gap: 10px; }
+
+.cust-notif-btn {
+  width: 36px; height: 36px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+}
+.cust-notif-btn:hover { background: rgba(59,130,246,0.1); color: var(--accent-blue); }
+
+.cust-user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  padding: 4px 14px 4px 4px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.cust-user-btn:hover { background: rgba(59,130,246,0.1); border-color: var(--accent-blue); }
+.cust-user-btn::after { display: none; }
+
+.cust-avatar {
+  width: 28px; height: 28px;
+  background: var(--gradient-1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.cust-mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 12px 16px;
+  border-top: 1px solid var(--dark-border);
+  gap: 4px;
+}
+.cust-mobile-menu.show { display: flex; }
+.cust-mobile-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.cust-mobile-menu a:hover { background: rgba(59,130,246,0.08); color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .cust-nav-links { display: none; }
+  .mobile-menu-btn { display: flex !important; }
+}
+
+/* ── Customer Wrapper ── */
+.customer-wrapper {
+  min-height: calc(100vh - 62px);
+  padding-bottom: 40px;
+}
+
+/* ── Welcome Banner ── */
+.welcome-banner {
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.1));
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 20px;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.welcome-orb {
+  position: absolute;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(59,130,246,0.2), transparent);
+  border-radius: 50%;
+  filter: blur(60px);
+  top: -60px; right: -40px;
+}
+.welcome-orb-2 {
+  width: 150px; height: 150px;
+  background: radial-gradient(circle, rgba(139,92,246,0.15), transparent);
+  bottom: -40px; left: 100px;
+  animation-delay: -3s;
+}
+.welcome-banner h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.welcome-banner p { color: var(--text-secondary); margin-bottom: 16px; font-size: 14px; }
+
+/* ── Customer Stat Cards ── */
+.cust-stat-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+.cust-stat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+.cust-stat-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 12px;
+}
+.cust-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 4px;
+}
+.cust-stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── Browse Grid ── */
+.browse-hero {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.05));
+  border: 1px solid rgba(59,130,246,0.1);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+.browse-hero h4 { margin-bottom: 12px; }
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.filter-chip:hover, .filter-chip.active {
+  background: rgba(59,130,246,0.12);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* ── Vehicle Detail ── */
+.vehicle-detail-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--dark-surface);
+}
+.spec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.spec-badge i { color: var(--accent-blue); }
+
+/* ── Booking Form Card ── */
+.booking-card {
+  background: var(--dark-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 24px;
+  position: sticky;
+  top: 80px;
+}
+.booking-card .price-big {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+}
+.booking-divider {
+  border: none;
+  border-top: 1px solid var(--dark-border);
+  margin: 16px 0;
+}
+.booking-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+.booking-summary-row.total {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-top: 1px solid var(--dark-border);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .welcome-banner { padding: 20px 16px; }
+  .booking-card { position: static; }
+}
