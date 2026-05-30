@@ -176,6 +176,15 @@ http://localhost/driveflow
 
 ---
 
+## 📸 Screenshots
+
+![Homepage](assets/images/readme/Homepage.png)
+![Customer Dashboard](assets/images/readme/customer%20dashboard.png)
+![Customer Rentals](assets/images/readme/customer%20rentals.png)
+![Admin Analytics](assets/images/readme/Admin%20analytics.png)
+![Admin Dashboard](assets/images/readme/Admin%20dashboard.png)
+
+
 ## Sample Accounts
 
 ### Admin
