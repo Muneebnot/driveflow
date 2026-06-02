@@ -1,14 +1,8 @@
--- ============================================================
--- DriveFlow – Vehicle Rental & Fleet Management System
--- Complete Database Schema with Sample Data
--- ============================================================
 
 CREATE DATABASE IF NOT EXISTS driveflow CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE driveflow;
 
--- ============================================================
--- TABLE: vehicle_types
--- ============================================================
+
 CREATE TABLE vehicle_types (
     id INT AUTO_INCREMENT PRIMARY KEY,
     type_name VARCHAR(100) NOT NULL,
@@ -16,9 +10,7 @@ CREATE TABLE vehicle_types (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: users
--- ============================================================
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
@@ -30,9 +22,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: vehicles
--- ============================================================
 CREATE TABLE vehicles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     vehicle_name VARCHAR(150) NOT NULL,
@@ -51,9 +40,7 @@ CREATE TABLE vehicles (
     FOREIGN KEY (type_id) REFERENCES vehicle_types(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: rentals
--- ============================================================
+
 CREATE TABLE rentals (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -68,9 +55,7 @@ CREATE TABLE rentals (
     FOREIGN KEY (vehicle_id) REFERENCES vehicles(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: payments
--- ============================================================
+
 CREATE TABLE payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rental_id INT NOT NULL,
@@ -82,9 +67,7 @@ CREATE TABLE payments (
     FOREIGN KEY (rental_id) REFERENCES rentals(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: feedback
--- ============================================================
+
 CREATE TABLE feedback (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -96,9 +79,7 @@ CREATE TABLE feedback (
     FOREIGN KEY (vehicle_id) REFERENCES vehicles(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: activity_logs
--- ============================================================
+
 CREATE TABLE activity_logs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -108,9 +89,7 @@ CREATE TABLE activity_logs (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- ============================================================
--- TABLE: notifications
--- ============================================================
+
 CREATE TABLE notifications (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -121,9 +100,6 @@ CREATE TABLE notifications (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ============================================================
--- SAMPLE DATA
--- ============================================================
 
 -- Vehicle Types
 INSERT INTO vehicle_types (type_name, description) VALUES
@@ -135,8 +111,7 @@ INSERT INTO vehicle_types (type_name, description) VALUES
 ('Van', 'Large capacity vans for groups and cargo transport'),
 ('Motorcycle', 'Fuel-efficient two-wheelers for quick city commutes');
 
--- Users (Admin + Customers)
--- Passwords are bcrypt hashed: admin123 / customer123
+
 INSERT INTO users (full_name, email, password, role, phone, address) VALUES
 ('Admin User', 'admin@driveflow.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', '+92-300-0000001', 'DriveFlow HQ, Karachi'),
 ('Ali Hassan', 'ali@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'customer', '+92-300-1234567', '123 Garden Road, Karachi'),
